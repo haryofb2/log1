@@ -23,3 +23,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/logout_new','HomeController@logoutnew')->name('logot');
+
+Route::get('/member','MemberController@index');
+
+Route::post('/member/store','MemberController@store')->name('member.store');
+
+Route::get('/hello','MasterController@index');

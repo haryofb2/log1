@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class RoleSeeder extends Seeder
+class incomeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,15 +15,24 @@ class RoleSeeder extends Seeder
         {
             $data = [
                 [
-                    'name' => 'administrator',
+                    'name' => '< 3jt',
                 ],
                 [
-                    'name' => 'guest',
+                    'name' => '> 3 - 5jt',
+                ],
+                [
+                    'name' => '>5 - 10jt',
+                ],
+                [
+                    'name' => '10 - 15jt',
+                ],
+                [
+                    'name' => '> 15jt+',
                 ],
 
             ];
             foreach ($data as $d) {
-                DB::table('roles')->insert([
+                DB::table('incomes')->insert([
                     'name'    => $d['name'],
                 ]);
             }
