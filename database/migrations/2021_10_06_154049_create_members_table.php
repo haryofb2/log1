@@ -14,37 +14,36 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('no_wa');
+            $table->increments('member_id');
+            $table->integer('user_id');
+            $table->string('no_hp');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('link_akun_instagram');
             $table->string('link_akun_facebook');
             $table->string('link_akun_tiktok');
             $table->string('link_akun_twitter');
             $table->string('link_akun_youtube');
-            $table->integer('profetion_id')->unsigned();
-            $table->string('detail_profesi');
-            $table->integer('interest_id')->unsigned();
-            $table->string('jumlah_anak');
-            $table->string('tahun_lahir_anak_sulung');
-            $table->string('tahun_lahir_anak_bungsu');
+            $table->integer('profesi_id')->unsigned();
+            $table->text('detail_profesi');
+            $table->integer('interest')->unsigned();
+            $table->integer('anak_dimiliki');
+            $table->date('ttl_anak_sulung');
+            $table->date('ttl_anak_bungsu');
             $table->integer('income_id')->unsigned();
-            $table->string('alasan_bergabung');
-            $table->string('harapan_bergabung');
-
+            $table->text('alasan_bergabung');
+            $table->text('harapan_bergabung');
+            $table->integer('refferal_apps_id');
             $table->timestamps();
 
         });
-        Schema::table('members', function (Blueprint $table) {
-            $table->foreign('profetion_id')->references('id')->on('profetions');
-            $table->foreign('interest_id')->references('id')->on('interests');
-            $table->foreign('income_id')->references('id')->on('incomes');
+        // Schema::table('members', function (Blueprint $table) {
+        //     $table->foreign('profesi_id')->references('id')->on('profetions');
+        //     $table->foreign('interest')->references('id')->on('interests');
+        //     $table->foreign('income_id')->references('id')->on('incomes');
 
-        });
+        // });
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInterestsTable extends Migration
+class CreateProfesiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateInterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interests', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        Schema::create('profesi', function (Blueprint $table) {
+            $table->increments('profesi_id');
+            $table->string('profesi_name');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interests');
+        Schema::dropIfExists('profesi');
     }
 }

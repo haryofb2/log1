@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfetionsTable extends Migration
+class CreatePartnershipTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateProfetionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('profetions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        Schema::create('partnership_type', function (Blueprint $table) {
+            $table->increments('partnership_type_id');
+            $table->string('partnership_name');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateProfetionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profetions');
+        Schema::dropIfExists('partnership_type');
     }
 }
