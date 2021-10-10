@@ -15,7 +15,7 @@ class CreateProfesiTable extends Migration
     {
         Schema::create('profesi', function (Blueprint $table) {
             $table->increments('profesi_id');
-            $table->string('profesi_name');
+            $table->string('profesi_name')->nullable();
             $table->timestamps();
         });
     }

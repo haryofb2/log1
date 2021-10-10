@@ -15,7 +15,7 @@ class CreateInterestTable extends Migration
     {
         Schema::create('interest', function (Blueprint $table) {
             $table->increments('interest_id');
-            $table->string('interest_name');
+            $table->string('interest_name')->nullable();
             $table->timestamps();
         });
     }

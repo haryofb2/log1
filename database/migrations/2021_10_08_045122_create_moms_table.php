@@ -15,15 +15,20 @@ class CreateMomsTable extends Migration
     {
         Schema::create('moms', function (Blueprint $table) {
             $table->increments('mom_id');
-            $table->string('name');
-            $table->string('link_instagram');
-            $table->string('link_facebook');
-            $table->string('link_tiktok');
-            $table->text('quote');
-            $table->text('image');
-            $table->integer('job_id');
+            $table->string('name')->nullable();
+            $table->string('link_instagram')->nullable();
+            $table->string('link_facebook')->nullable();
+            $table->string('link_tiktok')->nullable();
+            $table->text('quote')->nullable();
+            $table->text('image')->nullable();
+            $table->integer('job_id')->unsigned();
             $table->timestamps();
         });
+
+        Schema::table('moms', function (Blueprint $table) {
+            $table->foreign('job_id')->references('profesi_id')->on('profesi');
+        });
+
     }
 
     /**

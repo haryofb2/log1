@@ -15,7 +15,7 @@ class CreateCategoryPartnershipTable extends Migration
     {
         Schema::create('category_partnership', function (Blueprint $table) {
             $table->increments('category_partnership_id');
-            $table->string('cat_partnership_name');
+            $table->string('cat_partnership_name')->nullable();
             $table->timestamps();
         });
     }

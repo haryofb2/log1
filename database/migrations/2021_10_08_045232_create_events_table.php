@@ -15,19 +15,19 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('event_id');
-            $table->string('event_name');
-            $table->string('category_event_id');
-            $table->string('content');
-            $table->float('price');
-            $table->text('venue');
-            $table->text('image');
-            $table->boolean('is_publish');
-            $table->integer('reward_event_id');
-            $table->integer('event_type');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('speaker');
-            $table->boolean('is_highlight');
+            $table->string('event_name')->nullable();
+            $table->string('category_event_id')->nullable();
+            $table->string('content')->nullable();
+            $table->float('price')->nullable();
+            $table->text('venue')->nullable();
+            $table->text('image')->nullable();
+            $table->boolean('is_publish')->nullable();
+            $table->integer('reward_event_id')->nullable();
+            $table->integer('event_type')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('speaker')->nullable();
+            $table->boolean('is_highlight')->nullable();
             $table->timestamps();
         });
     }

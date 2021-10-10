@@ -15,15 +15,20 @@ class CreateSponsorAreaTable extends Migration
     {
         Schema::create('sponsor_area', function (Blueprint $table) {
             $table->increments('sponsor_area_id');
-            $table->string('nama_brand');
-            $table->string('nama_cp');
-            $table->string('nomor_cp');
-            $table->string('email');
-            $table->integer('category_sponsor_id');
-            $table->text('brief');
-            $table->integer('type_sponsor');
+            $table->string('nama_brand')->nullable();
+            $table->string('nama_cp')->nullable();
+            $table->string('nomor_cp')->nullable();
+            $table->string('email')->nullable();
+            $table->integer('category_sponsor_id')->nullable();
+            $table->text('brief')->nullable();
+            $table->integer('type_sponsor')->unsigned();
             $table->timestamps();
         });
+
+        Schema::table('sponsor_area', function (Blueprint $table) {
+            $table->foreign('type_sponsor')->references('type_sponsor_id')->on('type_sponsor');
+        });
+
     }
 
     /**

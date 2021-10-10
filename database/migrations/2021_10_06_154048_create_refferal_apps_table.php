@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReferralAppsTable extends Migration
+class CreateRefferalAppsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateReferralAppsTable extends Migration
      */
     public function up()
     {
-        Schema::create('referral_apps', function (Blueprint $table) {
-            $table->increments('referral_apps_id');
-            $table->string('referral_apps_name');
+        Schema::create('refferal_apps', function (Blueprint $table) {
+            $table->increments('refferal_apps_id');
+            $table->string('refferal_apps_name')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateReferralAppsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('referral_apps');
+        Schema::dropIfExists('refferal_apps');
     }
 }

@@ -15,7 +15,7 @@ class CreateTypeSponsorTable extends Migration
     {
         Schema::create('type_sponsor', function (Blueprint $table) {
             $table->increments('type_sponsor_id');
-            $table->string('type_sponsor_name');
+            $table->string('type_sponsor_name')->nullable();
             $table->timestamps();
         });
     }

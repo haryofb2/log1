@@ -15,7 +15,7 @@ class CreatePartnershipTypeTable extends Migration
     {
         Schema::create('partnership_type', function (Blueprint $table) {
             $table->increments('partnership_type_id');
-            $table->string('partnership_name');
+            $table->string('partnership_name')->nullable();
             $table->timestamps();
         });
     }

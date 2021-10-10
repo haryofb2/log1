@@ -15,25 +15,25 @@ class incomeSeeder extends Seeder
         {
             $data = [
                 [
-                    'name' => '< 3jt',
+                    'f' => '< 3jt',
                 ],
                 [
-                    'name' => '> 3 - 5jt',
+                    'income' => '> 3 - 5jt',
                 ],
                 [
-                    'name' => '>5 - 10jt',
+                    'income' => '>5 - 10jt',
                 ],
                 [
-                    'name' => '10 - 15jt',
+                    'income' => '10 - 15jt',
                 ],
                 [
-                    'name' => '> 15jt+',
+                    'income' => '> 15jt+',
                 ],
 
             ];
             foreach ($data as $d) {
-                DB::table('incomes')->insert([
-                    'name'    => $d['name'],
+                DB::table('income')->insert([
+                    'income'    => $d['income'],
                 ]);
             }
         }

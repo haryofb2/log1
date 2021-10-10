@@ -15,14 +15,19 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('article_id');
-            $table->integer('category_article_id');
-            $table->string('title');
-            $table->text('content');
-            $table->integer('writter');
-            $table->boolean('is_publish');
-            $table->boolean('is_wajib_tau');
+            $table->integer('category_article_id')->nullable();
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->integer('writter')->unsigned();
+            $table->boolean('is_publish')->nullable();
+            $table->boolean('is_wajib_tau')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('articles', function (Blueprint $table) {
+            $table->foreign('writter')->references('user_id')->on('users');
+        });
+
     }
 
     /**

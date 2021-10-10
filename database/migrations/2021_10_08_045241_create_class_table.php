@@ -15,18 +15,18 @@ class CreateClassTable extends Migration
     {
         Schema::create('class', function (Blueprint $table) {
             $table->increments('class_id');
-            $table->string('class_name');
-            $table->string('category_class_id');
-            $table->string('content');
-            $table->float('price');
-            $table->text('venue');
-            $table->text('image');
-            $table->boolean('is_publish');
-            $table->integer('class_type');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->integer('speaker');
-            $table->boolean('is_highlight');
+            $table->string('class_name')->nullable();
+            $table->string('category_class_id')->nullable();
+            $table->string('content')->nullable();
+            $table->float('price')->nullable();
+            $table->text('venue')->nullable();
+            $table->text('image')->nullable();
+            $table->boolean('is_publish')->nullable();
+            $table->integer('class_type')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->integer('speaker')->nullable();
+            $table->boolean('is_highlight')->nullable();
             $table->timestamps();
         });
     }

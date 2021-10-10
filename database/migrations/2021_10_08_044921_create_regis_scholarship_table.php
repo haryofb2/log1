@@ -15,9 +15,13 @@ class CreateRegisScholarshipTable extends Migration
     {
         Schema::create('regis_scholarship', function (Blueprint $table) {
             $table->increments('regis_scholarship_id');
-            $table->integer('user_id');
-            $table->text('alasan');
+            $table->integer('user_id')->unsigned();
+            $table->text('alasan')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('regis_scholarship', function (Blueprint $table) {
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
