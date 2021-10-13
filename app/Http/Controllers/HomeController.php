@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Role;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,13 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $slc = Auth::user()->get;
-        return view('home');
-    }
-
-    public function logoutnew()
-    {
-        Auth::logout(); // menghapus session yang aktif
-        return redirect()->route('login');
+        return view('soni.dashboard.analytical');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MasterController extends Controller
 {
@@ -11,10 +12,18 @@ class MasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function index()
     {
         //
-        return view('hello');
+        // $user = Auth::user()->id;
+        // dd($user);
+
+        return view('content.layout.influencer_form');
     }
 
     /**
