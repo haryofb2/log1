@@ -12,10 +12,10 @@ class MasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -23,7 +23,7 @@ class MasterController extends Controller
         // $user = Auth::user()->id;
         // dd($user);
 
-        return view('content.layout.influencer_form');
+        return view('soni.views.dashboard.analytical');
     }
 
     /**

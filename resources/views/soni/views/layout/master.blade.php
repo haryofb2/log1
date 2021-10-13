@@ -202,51 +202,51 @@
         href="{{ asset('assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/sweetalert/sweetalert.css') }}" />
     <style>
-    .rate {
-        float: left;
-        height: 46px;
-        padding: 0 10px;
-    }
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
 
-    .rate:not(:checked)>input {
-        position: absolute;
-        top: -9999px;
-    }
+        .rate:not(:checked)>input {
+            position: absolute;
+            top: -9999px;
+        }
 
-    .rate:not(:checked)>label {
-        float: right;
-        width: 1em;
-        overflow: hidden;
-        white-space: nowrap;
-        cursor: pointer;
-        font-size: 30px;
-        color: #ccc;
-    }
+        .rate:not(:checked)>label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
 
-    .rate:not(:checked)>label:before {
-        content: '★ ';
-    }
+        .rate:not(:checked)>label:before {
+            content: '★ ';
+        }
 
-    .rate>input:checked~label {
-        color: #ffc700;
-    }
+        .rate>input:checked~label {
+            color: #ffc700;
+        }
 
-    .rate:not(:checked)>label:hover,
-    .rate:not(:checked)>label:hover~label {
-        color: #deb217;
-    }
+        .rate:not(:checked)>label:hover,
+        .rate:not(:checked)>label:hover~label {
+            color: #deb217;
+        }
 
-    .rate>input:checked+label:hover,
-    .rate>input:checked+label:hover~label,
-    .rate>input:checked~label:hover,
-    .rate>input:checked~label:hover~label,
-    .rate>label:hover~input:checked~label {
-        color: #c59b08;
-    }
+        .rate>input:checked+label:hover,
+        .rate>input:checked+label:hover~label,
+        .rate>input:checked~label:hover,
+        .rate>input:checked~label:hover~label,
+        .rate>label:hover~input:checked~label {
+            color: #c59b08;
+        }
     </style>
 </head>
 
-<?php 
+<?php
         $setting = !empty($_GET['theme']) ? $_GET['theme'] : '';
         $theme = "theme-orange";
         $menu = "";
@@ -278,8 +278,8 @@
 
     <div id="wrapper">
 
-        @include('layout.navbar')
-        @include('layout.sidebar')
+        @include('soni.views.layout.navbar')
+        @include('soni.views.layout.sidebar')
 
         <div id="main-content">
             <div class="container-fluid">
@@ -289,8 +289,7 @@
                             <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i
                                         class="fa fa-bars"></i></a> @yield('title')</h2>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('dashboard.analytical')}}"><i
-                                            class="icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#"><i class="icon-home"></i></a></li>
                                 @if (trim($__env->yieldContent('parentPageTitle')))
                                 <li class="breadcrumb-item">@yield('parentPageTitle')</li>
                                 @endif
@@ -613,7 +612,7 @@
 
     @if (trim($__env->yieldContent('page-script')))
     <script>
-    @yield('page-script')
+        @yield('page-script')
     </script>
     @endif
 </body>

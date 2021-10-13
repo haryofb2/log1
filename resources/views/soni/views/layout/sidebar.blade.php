@@ -5,15 +5,17 @@
                 alt="User Profile Picture">
             <div class="dropdown">
                 <span>Welcome,</span>
-                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Soni
-                        Setiabudi
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{
+                        Auth::user()->name }}
                     </strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account">
-                    <li><a href="{{route('pages.profile1')}}"><i class="icon-user"></i>My Profile</a></li>
+                    {{-- <li><a href="{{route('pages.profile1')}}"><i class="icon-user"></i>My Profile</a></li> --}}
+                    {{--
                     <!-- <li><a href="{{route('app.inbox')}}"><i class="icon-envelope-open"></i>Messages</a></li> -->
+                    --}}
                     <!-- <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li> -->
                     <li class="divider"></li>
-                    <li><a href="{{route('authentication.login')}}"><i class="icon-power"></i>Logout</a></li>
+                    {{-- <li><a href="{{route('authentication.login')}}"><i class="icon-power"></i>Logout</a></li> --}}
                 </ul>
             </div>
             <hr>
@@ -53,7 +55,7 @@
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li class="{{ Request::segment(2) === 'dashboard' ? 'active' : null }}">
-                            <a href="{{route('dashboard.analytical')}}"><i class="icon-home"></i>
+                            {{-- <a href="{{route('dashboard.analytical')}}"><i class="icon-home"></i> --}}
                                 <span>Dashboard</span></a>
 
                         </li>
@@ -63,12 +65,12 @@
                         <li class="{{ Request::segment(2) === 'event' ? 'active' : null }}">
                             <a href="#Event" class="has-arrow"><i class="icon-tag"></i> <span>Events</span></a>
                             <ul>
-                                <li class="{{ Request::segment(3) === 'new-event' ? 'active' : null }}"><a
+                                {{-- <li class="{{ Request::segment(3) === 'new-event' ? 'active' : null }}"><a
                                         href="{{route('event.new-event')}}">New Event</a> </li>
                                 <li class="{{ Request::segment(3) === 'category-event' ? 'active' : null }}"><a
                                         href="{{route('event.category')}}">Category Event</a> </li>
                                 <li class="{{ Request::segment(3) === 'list-event' ? 'active' : null }}"><a
-                                        href="{{route('event.list')}}">Event List</a> </li>
+                                        href="{{route('event.list')}}">Event List</a> </li> --}}
 
 
                             </ul>
@@ -77,6 +79,7 @@
                             <a href="#Courses" class="has-arrow"><i class="icon-grid"></i>
                                 <span>Courses</span></a>
                             <ul>
+                                {{--
                                 <!-- <li class="{{ Request::segment(2) === 'dashboard' ? 'active' : null }}"><a
                                         href="{{route('blog.dashboard')}}">Dashboard</a></li> -->
                                 <li class="{{ Request::segment(3) === 'new-course' ? 'active' : null }}"><a
@@ -84,20 +87,21 @@
                                 <li class="{{ Request::segment(3) === 'category-course' ? 'active' : null }}"><a
                                         href="{{route('courses.category')}}">Category Course</a></li>
                                 <li class="{{ Request::segment(3) === 'list-course' ? 'active' : null }}"><a
-                                        href="{{route('courses.list')}}">Course List</a></li>
+                                        href="{{route('courses.list')}}">Course List</a></li> --}}
 
                             </ul>
                         </li>
-                        <!-- <li class="{{ Request::segment(1) === 'blog' ? 'active' : null }}">
+                        {{--
+                        <!-- <li class="{{ Request::segment(1) === 'blog' ? 'active' : null }}"> --}}
                             <a href="#Blog" class="has-arrow"><i class="icon-globe"></i> <span>Article</span></a>
                             <ul>
-                                
-                                <li class="{{ Request::segment(2) === 'new-post' ? 'active' : null }}"><a
+
+                                {{-- <li class="{{ Request::segment(2) === 'new-post' ? 'active' : null }}"><a
                                         href="{{route('blog.new-post')}}">New Article</a></li>
                                 <li class="{{ Request::segment(2) === 'category' ? 'active' : null }}"><a
                                         href="{{route('blog.category')}}">Category Article</a></li>
                                 <li class="{{ Request::segment(2) === 'list' ? 'active' : null }}"><a
-                                        href="{{route('blog.list')}}">Article List</a></li>
+                                        href="{{route('blog.list')}}">Article List</a></li> --}}
 
                             </ul>
                         </li> -->
@@ -105,12 +109,13 @@
                             <a href="#Jobs" class="has-arrow"><i class="icon-folder"></i> <span>Jobs
                                 </span></a>
                             <ul>
+                                {{--
                                 <!-- <li class="{{ Request::segment(2) === 'dashboard' ? 'active' : null }}"><a
                                         href="{{route('jobs.dashboard')}}">Dashboard</a></li> -->
                                 <li class="{{ Request::segment(3) === 'new-job' ? 'active' : null }}"><a
                                         href="{{route('jobs.new-job')}}">New Jobs</a></li>
                                 <li class="{{ Request::segment(3) === 'list' ? 'active' : null }}"><a
-                                        href="{{route('jobs.list')}}">Jobs List</a></li>
+                                        href="{{route('jobs.list')}}">Jobs List</a></li> --}}
 
                             </ul>
                         </li>
@@ -118,7 +123,7 @@
                             <a href="#Users" class="has-arrow"><i class="icon-user"></i> <span>Users
                                 </span></a>
                             <ul>
-                                <li class="{{ Request::segment(3) === 'new-user' ? 'active' : null }}"><a
+                                {{-- <li class="{{ Request::segment(3) === 'new-user' ? 'active' : null }}"><a
                                         href="{{route('users.new-user')}}">New Users</a></li>
                                 <li class="{{ Request::segment(3) === 'user-list' ? 'active' : null }}"><a
                                         href="{{route('users.user-list')}}">Users List</a></li>
@@ -131,7 +136,7 @@
                                 <li class="{{ Request::segment(3) === 'partner-list' ? 'active' : null }}"><a
                                         href="{{route('users.partner-list')}}">Partner List</a></li>
                                 <li class="{{ Request::segment(3) === 'expert-list' ? 'active' : null }}"><a
-                                        href="{{route('users.expert-list')}}">Expert List</a></li>
+                                        href="{{route('users.expert-list')}}">Expert List</a></li> --}}
 
                             </ul>
                         </li>
@@ -146,8 +151,8 @@
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li class="{{ Request::segment(2) === 'transaction' ? 'active' : null }}">
-                            <a href="{{route('report.transaction')}}"><i class="icon-credit-card"></i>
-                                <span>Transaction</span></a>
+                            {{-- <a href="{{route('report.transaction')}}"><i class="icon-credit-card"></i>
+                                <span>Transaction</span></a> --}}
 
                         </li>
                     </ul>
@@ -188,13 +193,15 @@
                     <nav id="left-sidebar-nav" class="sidebar-nav">
                         <ul id="main-menu" class="metismenu">
                             <li class="{{ Request::segment(2) === 'banner-login-phone' ? 'active' : null }}">
-                                <a href="{{route('setting.bannerloginphone')}}"><i class="icon-screen-smartphone"></i>
-                                    <span>Banner Login</span></a>
+                                {{-- <a href="{{route('setting.bannerloginphone')}}"><i
+                                        class="icon-screen-smartphone"></i>
+                                    <span>Banner Login</span></a> --}}
 
                             </li>
                             <li class="{{ Request::segment(2) === 'banner-home-phone' ? 'active' : null }}">
-                                <a href="{{route('setting.bannerhomephone')}}"><i class="icon-screen-smartphone"></i>
-                                    <span>Banner Home</span></a>
+                                {{-- <a href="{{route('setting.bannerhomephone')}}"><i
+                                        class="icon-screen-smartphone"></i>
+                                    <span>Banner Home</span></a> --}}
 
                             </li>
                         </ul>
@@ -206,12 +213,12 @@
                     <nav id="left-sidebar-nav" class="sidebar-nav">
                         <ul id="main-menu" class="metismenu">
                             <li class="{{ Request::segment(2) === 'banner-home-web' ? 'active' : null }}">
-                                <a href="{{route('setting.bannerhomeweb')}}"><i class="icon-screen-desktop"></i>
-                                    <span>Banner Home</span></a>
+                                {{-- <a href="{{route('setting.bannerhomeweb')}}"><i class="icon-screen-desktop"></i>
+                                    <span>Banner Home</span></a> --}}
 
                             </li>
                             <!-- <li class="{{ Request::segment(2) === 'transaction' ? 'active' : null }}">
-                                <a href="{{route('report.transaction')}}"><i class="icon-screen-desktop"></i>
+                                {{-- <a href="{{route('report.transaction')}}"><i class="icon-screen-desktop"></i> --}}
                                     <span>Banner Home</span></a>
 
                             </li> -->

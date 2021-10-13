@@ -5,7 +5,7 @@
         </div>
 
         <div class="navbar-brand">
-            <a href="{{route('dashboard.analytical')}}" style="color:#777;">
+            {{-- <a href="{{route('dashboard.analytical')}}" style="color:#777;"> --}}
                 <!-- <img
                     src="{{ asset('assets/img/logo_mom.png') }}" style="height:40px !important;width:auto"
                     alt="Lucid Logo" class="img-responsive logo">  -->
@@ -23,18 +23,18 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
                     <!-- <li class="d-none d-sm-inline-block d-md-none d-lg-inline-block">
-                        <a href="{{route('file-manager.dashboard')}}" class="icon-menu"><i
+                        {{-- <a href="{{route('file-manager.dashboard')}}" class="icon-menu"><i --}}
                                 class="fa fa-folder-open-o"></i></a>
                     </li> -->
                     <li class="d-none d-sm-inline-block d-md-none d-lg-inline-block">
-                        <a href="{{route('app.calendar')}}" style="color:orange" class="icon-menu"><i
-                                class="icon-calendar"></i></a>
+                        {{-- <a href="{{route('app.calendar')}}" style="color:orange" class="icon-menu"><i
+                                class="icon-calendar"></i></a> --}}
+                    </li>
+                    <li class="d-none d-sm-inline-block">
+                        <a href="{{route('logout')}}" class="icon-menu"><i class="icon-bubbles"></i></a>
                     </li>
                     <!-- <li class="d-none d-sm-inline-block">
-                        <a href="{{route('app.chat')}}" class="icon-menu"><i class="icon-bubbles"></i></a>
-                    </li> -->
-                    <!-- <li class="d-none d-sm-inline-block">
-                        <a href="{{route('app.inbox')}}" class="icon-menu"><i class="icon-envelope"></i><span
+                        {{-- <a href="{{route('app.inbox')}}" class="icon-menu"><i class="icon-envelope"></i><span --}}
                                 class="notification-dot"></span></a>
                     </li> -->
                     <li class="dropdown">
@@ -102,6 +102,16 @@
                             <li class="footer"><a href="javascript:void(0);" class="more">See all notifications</a></li>
                         </ul>
                     </li>
+
+                    {{-- <li class="d-none d-sm-inline-block">
+                        <a class="nav-link" href="{{ route('logout') }}" role="button" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i style="color: red"
+                                class="fas fa-sign-out-alt fa-lg"></i>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li> --}}
                     <!-- <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown"><i
                                 class="icon-equalizer"></i></a>
@@ -123,7 +133,8 @@
                         </ul>
                     </li> -->
                     <li>
-                        <a href="{{route('authentication.login')}}" class="icon-menu"><i class="icon-login"></i></a>
+                        {{-- <a href="{{route('authentication.login')}}" class="icon-menu"><i
+                                class="icon-login"></i></a> --}}
                     </li>
                 </ul>
             </div>

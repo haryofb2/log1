@@ -16,14 +16,21 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
-        $income = income::all();
-        $interest = interest::all();
-        $profetion = profetion::all();
+        // $income = income::all();
+        // $interest = interest::all();
+        // $profetion = profetion::all();
 
-        return view('content.member_form',compact(['income','interest','profetion']));
+        // return view('content.member_form',compact(['income','interest','profetion']));
+
+        return view('soni.views.dashboard.not_admin');
     }
 
     /**
